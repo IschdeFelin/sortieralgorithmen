@@ -14,9 +14,7 @@ public class MergeSort {
      */
     private static int[] leftHalf(int[] array, int middle) {
         int[] leftArray = new int[middle];
-        for (int i = 0; i < middle; i++) {
-            leftArray[i] = array[i];
-        }
+        System.arraycopy(array, 0, leftArray, 0, middle);
         return leftArray;
     }
 
@@ -29,9 +27,7 @@ public class MergeSort {
      */
     private static int[] rightHalf(int[] array, int middle) {
         int[] rightArray = new int[array.length - middle];
-        for (int i = 0; i < rightArray.length; i++) {
-            rightArray[i] = array[middle + i];
-        }
+        System.arraycopy(array, middle, rightArray, 0, rightArray.length);
         return rightArray;
     }
 
